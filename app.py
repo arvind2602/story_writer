@@ -23,6 +23,12 @@ script_template = PromptTemplate(
     input_variables=["title"],
     template='Give me a real story on Title: {title}.',
 )
+
+# Adding Memory to the model
+
+
+
+
 # Llms
 llm=OpenAI(temperature=0.9)
 title_chain = LLMChain(llm=llm, prompt=title_template, verbose=True ,output_key="title")
