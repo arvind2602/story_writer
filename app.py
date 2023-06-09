@@ -1,12 +1,13 @@
 import os
-from apikey import apikey
+from dotenv import load_dotenv
 
+load_dotenv()
 import streamlit as st
 from langchain.llms import OpenAI
 from langchain.prompts import PromptTemplate
 from langchain.chains import LLMChain,SequentialChain 
 
-os.environ['OPENAI_API_KEY'] = apikey
+os.environ['OPENAI_API_KEY'] = os.getenv("apikey")
 
 # App Framework
 st.title(" Story GPT")
