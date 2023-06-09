@@ -30,6 +30,6 @@ sequential_chain=SequentialChain(chains=[title_chain,script_chain],input_variabl
 
 #for Showing the response   
 if prompt:
-    response=sequential_chain.run({"topic": prompt})
+    response=sequential_chain({"topic": prompt})
     st.write(response['title'])
     st.write(response['script'])
